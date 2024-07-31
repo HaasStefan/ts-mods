@@ -1,0 +1,22 @@
+import { Routes } from '@angular/router';
+import { CardContainerComponent } from './pages/card-container/card-container.component';
+import { CardDetailComponent } from './pages/card-detail/card-detail.component';
+import { CardListComponent } from './pages/card-list/card-list.component';
+
+export const cardsRoutes: Routes = [
+  {
+    path: '',
+    component: CardContainerComponent,
+    children: [
+      {
+        path: '',
+        component: CardListComponent,
+        outlet: 'list',
+      },
+      {
+        path: '',
+        component: CardDetailComponent,
+      },
+    ],
+  },
+];
